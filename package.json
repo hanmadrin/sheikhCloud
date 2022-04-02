@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/hanmadrin/bidbot_server#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.6",
     "dotenv": "^14.2.0",
     "express": "^4.17.2",
     "mysql2": "^2.3.3",
