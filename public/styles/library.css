@@ -1,53 +1,183 @@
-/* neoLoader start*/
-#neoLoader{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0);
-    z-index: 99999;
+@media (min-width: 576px) {  }
+
+@media (min-width: 768px) {  }
+
+@media (min-width: 992px) {  }
+
+@media (min-width: 1200px) {  }
+
+@media (min-width: 1400px) {  }
+
+.border-rounded{border-radius:50%}
+.border-0px{border-width:0px;}
+.border-top-0px{border-top-width:0px;}
+.border-start-0px{border-left-width:0px;}
+.border-bottom-0px{border-bottom-width:0px;}
+.border-end-0px{border-right-width:0px;}
+.border-top-5px{border-top-width:5px;}
+.border-5px{border-width:5px;}
+.border-start-5px{border-left-width:5px;}
+.border-bottom-5px{border-bottom-width:5px;}
+.border-end-5px{border-right-width:5px;}
+.border-10px{border-width:10px;}
+.border-top-10px{border-top-width:10px;}
+.border-start-10px{border-left-width:10px;}
+.border-bottom-10px{border-bottom-width:10px;}
+.border-end-10px{border-right-width:10px;}
+.border-15px{border-width:15px;}
+.border-top-15px{border-top-width:15px;}
+.border-start-15px{border-left-width:15px;}
+.border-bottom-15px{border-bottom-width:15px;}
+.border-end-15px{border-right-width:15px;}
+
+.border-solid{border-style:solid;}
+
+/* border individual colors start */
+.border-top-primary{border-top-color:#007bff;}
+.border-top-secondary{border-top-color:#6c757d;}
+.border-top-success{border-top-color:#28a745;}
+.border-top-info{border-top-color:#17a2b8;}
+.border-top-warning{border-top-color:#ffc107;}
+.border-top-danger{border-top-color:#dc3545;}
+.border-top-light{border-top-color:#f8f9fa;}
+.border-top-dark{border-top-color:#343a40;}
+.border-top-white{border-top-color:#fff;}
+.border-start-primary{border-left-color:#007bff;}
+.border-start-secondary{border-left-color:#6c757d;}
+.border-start-success{border-left-color:#28a745;}
+.border-start-info{border-left-color:#17a2b8;}
+.border-start-warning{border-left-color:#ffc107;}
+.border-start-danger{border-left-color:#dc3545;}
+.border-start-light{border-left-color:#f8f9fa;}
+.border-start-dark{border-left-color:#343a40;}
+.border-start-white{border-left-color:#fff;}
+.border-bottom-primary{border-bottom-color:#007bff;}
+.border-bottom-secondary{border-bottom-color:#6c757d;}
+.border-bottom-success{border-bottom-color:#28a745;}
+.border-bottom-info{border-bottom-color:#17a2b8;}
+.border-bottom-warning{border-bottom-color:#ffc107;}
+.border-bottom-danger{border-bottom-color:#dc3545;}
+.border-bottom-light{border-bottom-color:#f8f9fa;}
+.border-bottom-dark{border-bottom-color:#343a40;}
+.border-bottom-white{border-bottom-color:#fff;}
+.border-end-primary{border-right-color:#007bff;}
+.border-end-secondary{border-right-color:#6c757d;}
+.border-end-success{border-right-color:#28a745;}
+.border-end-info{border-right-color:#17a2b8;}
+.border-end-warning{border-right-color:#ffc107;}
+.border-end-danger{border-right-color:#dc3545;}
+.border-end-light{border-right-color:#f8f9fa;}
+.border-end-dark{border-right-color:#343a40;}
+.border-end-white{border-right-color:#fff;}
+/* border individual colors end */
+
+
+
+
+
+/* height width start*/
+.h-5px{height:5px;}
+.w-5px{width:5px;}
+.h-10px{height:10px;}
+.w-10px{width:10px;}
+.h-15px{height:15px;}
+.w-15px{width:15px;}
+.h-20px{height:20px;}
+.w-20px{width:20px;}
+.h-25px{height:25px;}
+.w-25px{width:25px;}
+.h-30px{height:30px;}
+.w-30px{width:30px;}
+.h-35px{height:35px;}
+.w-35px{width:35px;}
+.h-40px{height:40px;}
+.w-40px{width:40px;}
+.h-45px{height:45px;}
+.w-45px{width:45px;}
+.h-50px{height:50px;}
+.w-50px{width:50px;}
+.h-55px{height:55px;}
+.w-55px{width:55px;}
+.h-60px{height:60px;}
+.w-60px{width:60px;}
+.h-65px{height:65px;}
+.w-65px{width:65px;}
+.h-70px{height:70px;}
+.w-70px{width:70px;}
+.h-75px{height:75px;}
+.w-75px{width:75px;}
+.h-80px{height:80px;}
+.w-80px{width:80px;}
+.h-85px{height:85px;}
+.w-85px{width:85px;}
+.h-90px{height:90px;}
+.w-90px{width:90px;}
+.h-95px{height:95px;}
+.w-95px{width:95px;}
+.h-100px{height:100px;}
+.w-100px{width:100px;}
+.h-105px{height:105px;}
+.w-105px{width:105px;}
+.h-110px{height:110px;}
+.w-110px{width:110px;}
+.h-115px{height:115px;}
+.w-115px{width:115px;}
+.h-120px{height:120px;}
+.w-120px{width:120px;}
+.h-125px{height:125px;}
+.w-125px{width:125px;}
+.h-130px{height:130px;}
+.w-130px{width:130px;}
+.h-135px{height:135px;}
+.w-135px{width:135px;}
+.h-140px{height:140px;}
+.w-140px{width:140px;}
+.h-145px{height:145px;}
+.w-145px{width:145px;}
+.h-150px{height:150px;}
+.w-150px{width:150px;}
+/* height width end */
+
+
+
+
+
+
+/* animations start*/
+.animate-spin-linear-infinite-p5s{
+    animation: spin linear infinite 0.5s;
+    -webkit-animation: spin linear infinite 0.5s;
 }
-#neoLoader .loader-holder{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.animate-spin-linear-infinite-1s{
+    animation: spin linear infinite 1s;
+    -webkit-animation: spin linear infinite 1s;
 }
-#neoLoader .loader {
-    border: 16px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 16px solid blue;
-    border-right: 16px solid green;
-    border-bottom: 16px solid red;
-    border-left: 16px solid pink;
-    width: 120px;
-    height: 120px;
-    -webkit-animation: neoLoader-spin 2s linear infinite;
-    animation: neoLoader-spin 2s linear infinite;
+.animate-spin-linear-infinite-2s{
+    animation: spin linear infinite 2s;
+    -webkit-animation: spin linear infinite 2s;
 }
-  
-@-webkit-keyframes neoLoader-spin {
+.animate-spin-linear-infinite-3s{
+    animation: spin linear infinite 3s;
+    -webkit-animation: spin linear infinite 3s;
+}
+.animate-spin-linear-infinite-4s{
+    animation: spin linear infinite 4s;
+    -webkit-animation: spin linear infinite 4s;
+}
+.animate-spin-linear-infinite-5s{
+    animation: spin linear infinite 5s;
+    -webkit-animation: spin linear infinite 5s;
+}
+/* animations end */
+
+
+/* key frames start */
+@-webkit-keyframes spin {
     0% { -webkit-transform: rotate(0deg); }
     100% { -webkit-transform: rotate(360deg); }
 }
-
-@keyframes neoLoader-spin {
+@keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-/* neoLoader end*/
-
-
-/* neoNotFound start*/
-#neoNotFound{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-
-/* neoNotFound end */
+/* key frames end */

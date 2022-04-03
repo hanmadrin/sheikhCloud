@@ -1,12 +1,12 @@
+import style from "../styles/style.js";
 import app from "./app.js";
-import home from "./home.js";
+import view from "./view.js";
 const notFound = ()=>{
     const root = document.getElementById(app.id);
-    const contentHolder = document.createElement('div');
-    contentHolder.id = 'neoNotFound';
-    contentHolder.classList.add('contentHolder');
-    const contentHolderTitle = document.createElement('h1');
-    contentHolderTitle.innerText = '404 NOT FOUND';
+    const neoNotFound = document.createElement('div');
+    neoNotFound.className = style.neoNotFound.main.join(' ');
+    const neoNotFoundTitle = document.createElement('h1');
+    neoNotFoundTitle.innerText = '404 NOT FOUND';
     const logo = document.createElement('img');
     logo.src = './public/icons/logo.png';
     const homeButton = document.createElement('button');
@@ -14,9 +14,9 @@ const notFound = ()=>{
     homeButton.classList.add('btn');
     homeButton.addEventListener('click',async ()=>{
         window.history.pushState({},null,'/');
-        await home();
+        await view();
     });
-    contentHolder.append(logo,contentHolderTitle,homeButton);
-    root.replaceChildren(contentHolder);
+    neoNotFound.append(logo,neoNotFoundTitle,homeButton);
+    root.replaceChildren(neoNotFound);
 }
 export default notFound;

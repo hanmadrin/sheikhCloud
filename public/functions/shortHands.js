@@ -19,40 +19,40 @@ const changeTitle = (title) => {
         console.log(error);
     }
 }
-const generateLoader = () => {
-    // generates the loader
-    try{
-        if(document.getElementById('neoLoader')===null){
-            const neoLoader = document.createElement('div');
-            neoLoader.id = 'neoLoader';
-            neoLoader.style.display = 'none';
-            const loaderHolder = document.createElement('div');
-            loaderHolder.className = 'loader-holder';
-            const loader = document.createElement('div');
-            loader.className = 'loader';
-            loaderHolder.appendChild(loader);
-            neoLoader.appendChild(loaderHolder);
-            document.body.appendChild(neoLoader);
-        }
-    }catch(error){
-        console.log(error);
-    }
-}
-const showHideLoader = (show) => {
-    //shows or hides the loader
-    try {
-        const neoLoader = document.getElementById('neoLoader');
-        if (show) {
-            neoLoader.style.display = 'block';
-        } else {
-            neoLoader.style.display = 'none';
-        }
-    } catch (error) {
-        console.log(error);
-    }
-}
+// const generateLoader = () => {
+//     // generates the loader
+//     try{
+//         if(document.getElementById('neoLoader')===null){
+//             const neoLoader = document.createElement('div');
+//             neoLoader.id = 'neoLoader';
+//             neoLoader.style.display = 'none';
+//             const loaderHolder = document.createElement('div');
+//             loaderHolder.className = 'loader-holder';
+//             const loader = document.createElement('div');
+//             loader.className = 'loader';
+//             loaderHolder.appendChild(loader);
+//             neoLoader.appendChild(loaderHolder);
+//             document.body.appendChild(neoLoader);
+//         }
+//     }catch(error){
+//         console.log(error);
+//     }
+// }
+// const showHideLoader = (show) => {
+//     //shows or hides the loader
+//     try {
+//         const neoLoader = document.getElementById('neoLoader');
+//         if (show) {
+//             neoLoader.style.display = 'block';
+//         } else {
+//             neoLoader.style.display = 'none';
+//         }
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
 const sleep = async (ms) => {
     //sleeps for a given time
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-export {changeFavicon,changeTitle,showHideLoader,generateLoader,sleep};
+export {changeFavicon,changeTitle,sleep};
