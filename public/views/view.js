@@ -3,6 +3,8 @@ import home from "./home.js";
 import logIn from "./logIn.js";
 import toggleLoader from "../functions/toggleLoader.js";
 import { sleep } from "../functions/shortHands.js";
+import debitInvoice from "./debitInvoice.js";
+import creditInvoice from "./creditInvoice.js";
 const view = async ()=>{
     const path = window.location.pathname;
     toggleLoader(true);
@@ -11,13 +13,22 @@ const view = async ()=>{
             await home();
         break;
         case '/login': 
+        case '/login/': 
             await logIn();
+        break;
+        case '/debitInvoice':
+        case '/debitInvoice/':
+            await debitInvoice(); 
+        break;
+        case '/creditInvoice':
+        case '/creditInvoice/':
+            await creditInvoice(); 
         break;
         default: 
             notFound();
         break;
     }
-    await sleep(1000);
+    // await sleep(1000);
     toggleLoader(false);
 }
 export default view;

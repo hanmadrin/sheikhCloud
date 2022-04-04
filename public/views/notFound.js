@@ -8,7 +8,7 @@ const notFound = ()=>{
     const neoNotFoundTitle = document.createElement('h1');
     neoNotFoundTitle.innerText = '404 NOT FOUND';
     const logo = document.createElement('img');
-    logo.src = './public/icons/logo.png';
+    logo.src = '/public/icons/logo.png';
     const homeButton = document.createElement('button');
     homeButton.innerText = 'Home';
     homeButton.classList.add('btn');

@@ -31,6 +31,28 @@
 .border-end-15px{border-right-width:15px;}
 
 .border-solid{border-style:solid;}
+.border-radius-1px{border-radius:1px;}
+.border-radius-2px{border-radius:2px;}
+.border-radius-3px{border-radius:3px;}
+.border-radius-4px{border-radius:4px;}
+.border-radius-5px{border-radius:5px;}
+.border-radius-6px{border-radius:6px;}
+.border-radius-7px{border-radius:7px;}
+.border-radius-8px{border-radius:8px;}
+.border-radius-9px{border-radius:9px;}
+.border-radius-10px{border-radius:10px;}
+.border-radius-11px{border-radius:11px;}
+.border-radius-12px{border-radius:12px;}
+.border-radius-13px{border-radius:13px;}
+.border-radius-14px{border-radius:14px;}
+.border-radius-15px{border-radius:15px;}
+.border-radius-16px{border-radius:16px;}
+.border-radius-17px{border-radius:17px;}
+.border-radius-18px{border-radius:18px;}
+.border-radius-19px{border-radius:19px;}
+.border-radius-20px{border-radius:20px;}
+
+
 
 /* border individual colors start */
 .border-top-primary{border-top-color:#007bff;}
@@ -73,8 +95,86 @@
 
 
 
-
-
+.top-5px{top:5px;}
+.start-5px{left:5px;}
+.end-5px{right:5px;}
+.bottom-5px{bottom:5px;}
+.top-10px{top:10px;}
+.start-10px{left:10px;}
+.end-10px{right:10px;}
+.bottom-10px{bottom:10px;}
+.top-15px{top:15px;}
+.start-15px{left:15px;}
+.end-15px{right:15px;}
+.bottom-15px{bottom:15px;}
+.top-20px{top:20px;}
+.start-20px{left:20px;}
+.end-20px{right:20px;}
+.bottom-20px{bottom:20px;}
+.top-25px{top:25px;}
+.start-25px{left:25px;}
+.end-25px{right:25px;}
+.bottom-25px{bottom:25px;}
+.top-30px{top:30px;}
+.start-30px{left:30px;}
+.end-30px{right:30px;}
+.bottom-30px{bottom:30px;}
+.top-35px{top:35px;}
+.start-35px{left:35px;}
+.end-35px{right:35px;}
+.bottom-35px{bottom:35px;}
+.top-40px{top:40px;}
+.start-40px{left:40px;}
+.end-40px{right:40px;}
+.bottom-40px{bottom:40px;}
+.top-45px{top:45px;}
+.start-45px{left:45px;}
+.end-45px{right:45px;}
+.bottom-45px{bottom:45px;}
+.top-50px{top:50px;}
+.start-50px{left:50px;}
+.end-50px{right:50px;}
+.bottom-50px{bottom:50px;}
+.top-55px{top:55px;}
+.start-55px{left:55px;}
+.end-55px{right:55px;}
+.bottom-55px{bottom:55px;}
+.top-60px{top:60px;}
+.start-60px{left:60px;}
+.end-60px{right:60px;}
+.bottom-60px{bottom:60px;}
+.top-65px{top:65px;}
+.start-65px{left:65px;}
+.end-65px{right:65px;}
+.bottom-65px{bottom:65px;}
+.top-70px{top:70px;}
+.start-70px{left:70px;}
+.end-70px{right:70px;}
+.bottom-70px{bottom:70px;}
+.top-75px{top:75px;}
+.start-75px{left:75px;}
+.end-75px{right:75px;}
+.bottom-75px{bottom:75px;}
+.top-80px{top:80px;}
+.start-80px{left:80px;}
+.end-80px{right:80px;}
+.bottom-80px{bottom:80px;}
+.top-85px{top:85px;}
+.start-85px{left:85px;}
+.end-85px{right:85px;}
+.bottom-85px{bottom:85px;}
+.top-90px{top:90px;}
+.start-90px{left:90px;}
+.end-90px{right:90px;}
+.bottom-90px{bottom:90px;}
+.top-95px{top:95px;}
+.start-95px{left:95px;}
+.end-95px{right:95px;}
+.bottom-95px{bottom:95px;}
+.top-100px{top:100px;}
+.start-100px{left:100px;}
+.end-100px{right:100px;}
+.bottom-100px{bottom:100px;}
 /* height width start*/
 .h-5px{height:5px;}
 .w-5px{width:5px;}
@@ -136,13 +236,40 @@
 .w-145px{width:145px;}
 .h-150px{height:150px;}
 .w-150px{width:150px;}
+.h-155px{height:155px;}
+.w-155px{width:155px;}
+.h-160px{height:160px;}
+.w-160px{width:160px;}
+.h-165px{height:165px;}
+.w-165px{width:165px;}
+.h-170px{height:170px;}
+.w-170px{width:170px;}
+.h-175px{height:175px;}
+.w-175px{width:175px;}
+.h-180px{height:180px;}
+.w-180px{width:180px;}
+.h-185px{height:185px;}
+.w-185px{width:185px;}
+.h-190px{height:190px;}
+.w-190px{width:190px;}
+.h-195px{height:195px;}
+.w-195px{width:195px;}
+.h-200px{height:200px;}
+.w-200px{width:200px;}
 /* height width end */
 
 
 
+/* box-shadow start */
+.box-shadow-3d{box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;}
+.focus-boxshadow-none:focus{box-shadow:none}
+.cursor-pointer{cursor:pointer}
 
+/* box-shadow end */
 
-
+.w-max-content{width:max-content;}
+.outline-none{outline:none;}
+.bg-dark-0{background-color:#e7e7e7;}
 /* animations start*/
 .animate-spin-linear-infinite-p5s{
     animation: spin linear infinite 0.5s;

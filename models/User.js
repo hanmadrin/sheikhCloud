@@ -2,13 +2,14 @@ const sequelize = require('sequelize');
 const db = require('../configs/database.js');
 
 const User = db.define('user',{
-    id: {
+    serial: {
         primaryKey: true,
         type: sequelize.INTEGER(10),
         autoIncrement: true,
         allowNull: false
     },
     username: {
+        primaryKey: true,
         type: sequelize.STRING(100),
         allowNull: true
     },

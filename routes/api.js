@@ -1,36 +1,19 @@
 const express = require('express');
+const login = require('../controllers/login');
+const isLoggedIn = require('../controllers/isLoggedIn');
+const debitInvoice = require('../controllers/debitInvoice');
+const authMiddleware = require('../controllers/authMiddleware');
+const logout = require('../controllers/logout');
 const router = express.Router();
-
-const Client = require('../models/Client');
-const CreditInvoice = require('../models/CreditInvoice');
-const DebitInvoice = require('../models/DebitInvoice');
-const DebitInvoiceItem = require('../models/DebitInvoiceItem');
-const GroupRide = require('../models/GroupRide');
 const User = require('../models/User');
+const creditInvoice = require('../controllers/creditInvoice');
 
-router.use('/',async(req,res,next) => {
-    let user = false;
-    try{
-        user = await User.findOne({
-            where: {
-                authkey: req.cookies.authkey
-            }
-        });
-    }catch(err){
-        user = await User.findOne({
-        where: {
-            authkey: ''
-        }
-    });}
-    
-    if(user){
-        next();
-    }else{
-        res.status(401).json();
-    }
-});
-
-router.get('/client',(req,res)=>{res.sendStatus(200);});
+router.post('/login', login);
+router.get('/isLoggedIn',isLoggedIn)
+router.use('/',authMiddleware);
+router.get('/logout',logout);
+router.get('/debitInvoice',debitInvoice);
+router.get('/creditInvoice',creditInvoice);
 
 
 router.use('/',(req,res)=>{res.sendStatus(404);});
