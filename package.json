@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "nodemon server.js",
-    "db": "node database_setup.js"
+    "db": "node ./configs/database.js"
   },
   "repository": {
     "type": "git",
