@@ -1,10 +1,10 @@
 const sequelize = require('sequelize');
 const db = require('../configs/database.js');
 
-const DebitInvoice = db.define('debit_invoice',{
+const DebitInvoice = db.define('DebitInvoice',{
     serial: {
         primaryKey: true,
-        type: sequelize.INTEGER(5),
+        type: sequelize.INTEGER(11),
         autoIncrement: true,
         allowNull: false
     },
@@ -14,6 +14,7 @@ const DebitInvoice = db.define('debit_invoice',{
     },
     invoice_number: {
         type: sequelize.STRING(30),
+        primaryKey: true,
         allowNull: true
     },
     invoice_category: {

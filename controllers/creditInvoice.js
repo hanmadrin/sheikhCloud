@@ -18,16 +18,14 @@ const creditInvoice = async (req,res) => {
     const monthsFromQuarter = {1: ['01','02','03'],2: ['04','05','06'],3: ['07','08','09'],4: ['10','11','12']};
     const Op = Sequelize.Op;
     const invoices = await CreditInvoice.findAll({
-        attributes:{
-            exclude: ['serial','invoice_filename']
-        },
+        attributes: [`serial`,'invoice_number','invoice_for','invoice_creditor','invoice_description','invoice_date','invoice_paydate','invoice_status','invoice_tax','invoice_total'],
         where: {
             invoice_date: {
-                [Op.or]:{
-                    [Op.like]: `${req.query.year}-${monthsFromQuarter[req.query.quarter][0]}-%`,
-                    [Op.like]: `${req.query.year}-${monthsFromQuarter[req.query.quarter][1]}-%`,
-                    [Op.like]: `${req.query.year}-${monthsFromQuarter[req.query.quarter][2]}-%`
-                }
+                [Op.or]:[
+                    {[Op.like]: `${req.query.year}-${monthsFromQuarter[req.query.quarter][0]}-%`},
+                    {[Op.like]: `${req.query.year}-${monthsFromQuarter[req.query.quarter][1]}-%`},
+                    {[Op.like]: `${req.query.year}-${monthsFromQuarter[req.query.quarter][2]}-%`}
+                ]
             },
             invoice_for: {
                 [Op.like]: `${req.query.company}%`

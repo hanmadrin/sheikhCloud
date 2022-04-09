@@ -31,10 +31,26 @@ const style = {
         select: ['form-select'],
     },
     neoTable:{
-        main: ['table','table-striped','table-hover','table-info','p-2','table-bordered','table-responsive-sm','table-responsive-md','table-responsive-lg','table-responsive-xl','table-responsive-xxl'],
-        noData: ['text-center','p-5'],
-        thead: ['sticky-top','shadow'],
-        th: ['text-capitalize']
+        main: ['d-table','w-100'],
+        noData: ['text-center','p-5','bg-info-2'],
+        backDrop: ['position-fixed','top-0','left-0','vw-100','vh-100','zindex-modal-backdrop','bg-transparent'],
+        contextMenu:['position-absolute','zindex-offcanvas','bg-white','min-width-200px','border-radius-10px','p-1','border','shadow'],
+        contextMenuDefaultsItemHolder:['d-flex'],
+        contextMenuItem:['cursor-pointer','bg-hover-dark','p-2','border'],
+        contextMenuDefaultItem:['cursor-pointer','bg-hover-dark','p-2','w-100','text-center','border'],
+        thead: ['sticky-top','shadow','d-table-row','bg-info-3'],
+        th: ['text-capitalize','d-table-cell','p-3','ps-2','border','border-start-0','border-bottom-0','border-info'],
+        tr: ['d-table-row','bg-info-2','border','border-top-0','border-info','border-bottom-0','border-end-0','bg-hover-dark','cursor-pointer'],
+        td: ['d-table-cell','p-2','pt-3','pb-3','border','border-start-0','border-top-0','border-info','text-truncate','text-nowrap','text-break-all','max-width-150px']
+    },
+    neoActionConfirmer:{
+        main: ['position-fixed','vh-100','vw-100','top-0','left-0','zindex-modal-backdrop'],
+        contentHolder: ['position-absolute','zindex-modal','top-50','start-50','translate-middle','border','p-5','border-radius-10px','shadow-lg','bg-white'],
+        cancel: ['btn','btn-danger','border-radius-15px'],
+        confirm: ['btn','btn-success','border-radius-15px'],
+        title: ['text-center','p-2','font-weight-bold'],
+        messageHolder: ['text-center','py-5'],
+        actionHolder: ['d-flex','justify-content-between','align-items-center']
     },
     debitInvoice:{
         filterHolder:['shadow','d-flex','justify-content-evenly','p-2']
@@ -42,6 +58,10 @@ const style = {
     creditInvoice:{
         filterHolder:['shadow','d-flex','justify-content-evenly','p-2']
     },
+    neoDebitInvoiceBuilder:{
+        main: ['d-flex','justify-content-center'],
+        contentHolder:['h-500px','border','p-2','my-3'],
+    }
 
 };
 export default style;

@@ -266,10 +266,31 @@
 .cursor-pointer{cursor:pointer}
 
 /* box-shadow end */
-
+.text-break-all{word-break:break-all}
+.max-width-150px{max-width:150px;}
+.min-width-150px{min-width:150px;}
+.min-width-200px{min-width:200px;}
 .w-max-content{width:max-content;}
 .outline-none{outline:none;}
 .bg-dark-0{background-color:#e7e7e7;}
+.bg-info-2{background-color:#d7f2fb;}
+.bg-info-3{background-color:#cce6ee;}
+.bg-hover-dark:hover{background-color:#cce6ee;}
+.bg-transparent{background-color:transparent;}
+
+.zindex-dropdown{z-index:1000;}
+.zindex-sticky{z-index:1020;}
+.zindex-fixed{z-index:1030;}
+.zindex-modal-backdrop{z-index:1040;}
+.zindex-offcanvas{z-index:1050;}
+.zindex-modal{z-index:1060;}
+.zindex-popover{z-index:1070;}
+.zindex-tooltip{z-index:1080;}
+
+
+
+
+
 /* animations start*/
 .animate-spin-linear-infinite-p5s{
     animation: spin linear infinite 0.5s;

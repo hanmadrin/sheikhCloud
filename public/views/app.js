@@ -4,7 +4,7 @@ const app ={
     url: window.location.host,
     setup: ()=>{
         app.node.id = app.id;
-        document.body.appendChild(app.node);
+        document.body.replaceChildren(app.node);
     }
 };
 export default app;

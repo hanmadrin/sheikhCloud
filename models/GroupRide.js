@@ -1,7 +1,7 @@
 const sequelize = require('sequelize');
 const db = require('../configs/database.js');
 
-const GroupRide = db.define('group_ride',{
+const GroupRide = db.define('GroupRide',{
     serial: {
         primaryKey: true,
         type: sequelize.INTEGER(10),

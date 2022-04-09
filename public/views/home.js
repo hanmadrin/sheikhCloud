@@ -28,8 +28,16 @@ const home = async () => {
         window.history.pushState({},null,'/debitInvoice');
         await view();
     });
-    contentHolder.append(creditInvoice,debitInvoice);
-    contentHolder.className = " m-5 p-5 d-flex flex-column h-200px justify-content-between align-items-center";
+    const newDebitInvoiceButton = document.createElement("button");
+    newDebitInvoiceButton.innerText = "New Debit Invoice";
+    newDebitInvoiceButton.className = "btn";
+    newDebitInvoiceButton.addEventListener('click',async ()=>{
+        window.history.pushState({},null,'/debitInvoice/new');
+        await view();
+    });
+    contentHolder.append(creditInvoice,debitInvoice,newDebitInvoiceButton);
+
+    contentHolder.className = " m-5 p-5 d-flex justify-content-between align-items-center";
     root.replaceChildren(neoHeader,contentHolder);
 }
 export default home;

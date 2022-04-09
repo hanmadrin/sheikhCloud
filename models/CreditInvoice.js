@@ -1,7 +1,7 @@
 const sequelize = require('sequelize');
 const db = require('../configs/database.js');
 
-const CreditInvoice = db.define('credit_invoice',{
+const CreditInvoice = db.define('CreditInvoice',{
     serial: {
         primaryKey: true,
         type: sequelize.INTEGER(11),

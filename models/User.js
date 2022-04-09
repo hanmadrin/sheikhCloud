@@ -1,7 +1,7 @@
 const sequelize = require('sequelize');
 const db = require('../configs/database.js');
 
-const User = db.define('user',{
+const User = db.define('User',{
     serial: {
         primaryKey: true,
         type: sequelize.INTEGER(10),

@@ -1,7 +1,6 @@
 const sequelize = require('sequelize');
 const db = require('../configs/database.js');
-
-const DebitInvoiceItem = db.define('DebitInvoiceItem',{
+const DebitInvoiceProduct = db.define('DebitInvoiceProduct',{
     serial: {
         primaryKey: true,
         type: sequelize.INTEGER(11),
@@ -12,22 +11,22 @@ const DebitInvoiceItem = db.define('DebitInvoiceItem',{
         type: sequelize.INTEGER(11),
         allowNull: false
     },
-    item_serial: {
-        type: sequelize.INTEGER(11),
+    title: {
+        type: sequelize.STRING(200),
         allowNull: false
     },
-    item_meta: {
-        type: sequelize.STRING(50),
+    taxRate: {
+        type: sequelize.DECIMAL(10,2),
         allowNull: false
     },
-    item_data: {
-        type: sequelize.STRING(50),
+    totalPrice: {
+        type: sequelize.DECIMAL(10,2),
         allowNull: false
     },
 },{
     timestamps: false,
     freezeTableName: true,
-    tableName: 'debit_invoice_item'
+    tableName: 'debit_invoice_product'
 });
-// DebitInvoiceItem.sync();
-module.exports = DebitInvoiceItem;
+// DebitInvoiceProduct.sync();
+module.exports = DebitInvoiceProduct;

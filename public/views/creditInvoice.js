@@ -7,6 +7,7 @@ import style from "../styles/style.js";
 import generateCreditInvoiceParams from "../functions/generateCreditInvoiceParams.js";
 import filter from "./filter.js";
 import interactiveTable from "./interactiveTable.js";
+import creditInvoiceInteraction from "../functions/creditInvoiceInteraction.js";
 const creditInvoice = async () => {
     try{
         const response = await fetch('/api/isLoggedIn', {method: 'GET',});
@@ -47,7 +48,7 @@ const creditInvoice = async () => {
             });
             
             const contentHolder = document.createElement("div");
-            const table = interactiveTable({data: data.invoices,interaction: function(){}});
+            const table = interactiveTable({data: data.invoices,interaction: creditInvoiceInteraction});
 
             const neoHeader = header();
             const root = document.getElementById(app.id);

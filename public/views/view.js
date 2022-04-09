@@ -5,6 +5,8 @@ import toggleLoader from "../functions/toggleLoader.js";
 import { sleep } from "../functions/shortHands.js";
 import debitInvoice from "./debitInvoice.js";
 import creditInvoice from "./creditInvoice.js";
+import app from "./app.js";
+import newDebitInvoice from "./newDebitInvoice.js";
 const view = async ()=>{
     const path = window.location.pathname;
     toggleLoader(true);
@@ -20,6 +22,10 @@ const view = async ()=>{
         case '/debitInvoice/':
             await debitInvoice(); 
         break;
+        case '/debitInvoice/new':
+        case '/debitInvoice/new/':
+            await newDebitInvoice();
+        break;
         case '/creditInvoice':
         case '/creditInvoice/':
             await creditInvoice(); 
@@ -30,5 +36,6 @@ const view = async ()=>{
     }
     // await sleep(1000);
     toggleLoader(false);
+    app.setup();
 }
 export default view;
