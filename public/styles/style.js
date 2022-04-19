@@ -16,7 +16,7 @@ const style = {
         button: ['d-block','mt-4','m-auto','btn','box-size-border-box','outline-none','p-2','pt-3','w-200px']
     },
     neoNotify:{
-        main: ['position-absolute','end-30px','top-30px','cursor-pointer'],
+        main: ['position-fixed','end-30px','top-30px','cursor-pointer'],
         notification:['text-white','p-3','border-radius-5px']
     },
     neoHeader:{
@@ -59,8 +59,43 @@ const style = {
         filterHolder:['shadow','d-flex','justify-content-evenly','p-2']
     },
     neoDebitInvoiceBuilder:{
-        main: ['d-flex','justify-content-center'],
-        contentHolder:['h-500px','border','p-2','my-3'],
+        main: ['d-flex','justify-content-center','mb-5'],
+        contentHolder:['border','p-2','my-3'],
+        h3: ['text-center','mb-4']
+    },
+    neoRadioInput:{
+        main:['d-flex','justify-content-between'],
+        radio: ['d-none'],
+        label:['btn','border-radius-10px','p-2','cursor-pointer','input-checked-bg-info','input-checked-text-white']
+    },
+    neoDynamicContent:{
+        main:[],
+        debitorSelector: ['form-select'],
+        inputHolder: ['my-3','w-100'],
+        numberInput :['form-control','p-6px'],
+        dateInput: ['form-control','p-6px'],
+        descriptionInput: ['form-control','p-6px'],
+        titleInput: ['form-control','p-6px'],
+        tax_rateInput: ['form-control','p-6px'],
+        priceInput: ['form-control','p-6px'],
+        companySelector:['form-select'],
+        statusSelector:['form-select'],
+        numberCompanyStatusHolder:['d-flex','justify-content-between','align-items-center'],
+        taxPriceHolder:['d-flex','justify-content-between','align-items-center'],
+        dateDuePayHolder:['d-flex','justify-content-between','align-items-center'],
+        rateTypeHolder:['w-100px','d-flex','justify-content-between','align-items-center','ms-2','pt-4'],
+        descriptionRateTypeHolder:['w-100','d-flex','justify-content-between','align-items-center'],
+        tax_rateHolder:['w-150px','my-1'],
+        priceHolder:['w-200px','my-1'],
+        titleHolder:['my-1'],
+        productsHolder:['border','border-radius-10px','p-2','my-3','border-info','border-2','transition-height-1s'],
+        addButtonHolder: ['d-flex','justify-content-center'],
+        saveButtonHolder: ['d-flex','justify-content-center'],
+        productAddButton:['btn','btn-info','border-radius-0-0-50p-50p-IMP','h-40px','w-40px','p-0','fs-30pxIMP','lh-1IMP','mt-n3'],
+        productHolder:['border','border-radius-10px','p-2','my-2','position-relative','overflow-hidden','border-dark'],
+        removeButton:['btn','btn-danger','border-radius-10px','p-2','cursor-pointer','position-absolute','top-0','end-0'],
+        fileUploadInput:['form-control'],
+        saveButton:['btn','btn-success','my-3','btn-lg'],
     }
 
 };

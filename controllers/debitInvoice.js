@@ -1,9 +1,12 @@
 const DebitInvoice = require('../models/DebitInvoice');
 const Sequelize = require('sequelize');
 const DebitInvoiceProduct = require('../models/DebitInvoiceProduct');
+const Client = require('../models/Client');
 
 DebitInvoice.hasMany(DebitInvoiceProduct, {foreignKey: 'invoice_serial'});
 DebitInvoiceProduct.belongsTo(DebitInvoice,{foreignKey: 'serial'});
+Client.hasMany(DebitInvoice, {foreignKey: 'serial'});
+DebitInvoice.belongsTo(Client,{foreignKey: 'invoice_debitorserial'});
 
 const debitInvoice = async (req,res) => {
     const year = await DebitInvoice.findAll({
@@ -29,11 +32,17 @@ const debitInvoice = async (req,res) => {
     const monthsFromQuarter = {1: ['01','02','03'],2: ['04','05','06'],3: ['07','08','09'],4: ['10','11','12']};
     const Op = Sequelize.Op;
     const invoices = await DebitInvoice.findAll({
-        attributes:[`serial`,`invoice_number`, `invoice_for`, `invoice_category`, `invoice_debitorserial`, `invoice_duedate`, `invoice_paydate`, `invoice_description`, `invoice_ratetype`, `total_item`,`invoice_date`, `invoice_status`],
-        include: {
-            model: DebitInvoiceProduct,
-            attributes: [`totalPrice`,'taxRate'],
-        },
+        attributes:[`serial`,`invoice_number`, `invoice_for`, `invoice_category`, `invoice_debitorserial`, `invoice_duedate`, `invoice_paydate`, `invoice_description`, `invoice_ratetype`,`invoice_date`, `invoice_status`],
+        include: [
+            {
+                model: DebitInvoiceProduct,
+                attributes: [`price`,'tax_rate'],
+            },
+            {
+                model: Client,
+                attributes: ['firstname','lastname','address_email']
+            },
+        ],
         where: {
             invoice_date: {
                 [Op.or]:[

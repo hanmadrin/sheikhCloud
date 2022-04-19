@@ -35,9 +35,9 @@ const migrateDebitInvoiceItemToDebitInvoiceProduct = async () => {
             if(item.item_meta === 'item_description'){
                 product.title = item.item_data;
             }else if(item.item_meta === 'item_total'){
-                product.totalPrice = parseFloat(item.item_data);
+                product.price = parseFloat(item.item_data);
             }else if(item.item_meta === 'item_rate'){
-                product.taxRate = parseInt(item.item_data);
+                product.tax_rate = parseInt(item.item_data);
             }
         }
         migratedItems.push(product);

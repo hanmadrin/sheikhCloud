@@ -56,18 +56,49 @@ const debitInvoice = async () => {
                 invoices[i].tax = 0;
                 invoices[i].total = 0;
                 for(let j=0;j<items.length;j++){
-                    invoices[i].total += parseFloat(items[j].totalPrice);
-                    const taxrate = parseFloat(items[j].taxRate);
+                    //  parseFloat(items[j].price);
+                    const tax_rate = parseFloat(items[j].tax_rate);
                     if(invoices[i].invoice_ratetype === 'exc'){
-                        invoices[i].tax += (taxrate/100)*parseFloat(items[j].totalPrice);
+                        invoices[i].total += (parseFloat(items[j].price)*(1+tax_rate/100)); 
+                        invoices[i].tax += (tax_rate/100)*parseFloat(items[j].price);
                     }else if(invoices[i].invoice_ratetype === 'inc'){
-                        invoices[i].tax += (taxrate/100)*(parseFloat(items[j].totalPrice)/(1+taxrate/100));
+                        invoices[i].total += parseFloat(items[j].price);
+                        invoices[i].tax += (tax_rate/100)*(parseFloat(items[j].price)/(1+tax_rate/100));
                     }
                 }
                 invoices[i].total = `${invoices[i].total.toFixed(2)}`;
                 invoices[i].tax = `${invoices[i].tax.toFixed(2)}`;
                 delete invoices[i].DebitInvoiceProducts;
             };
+            for(let i=0;i<invoices.length;i++){
+                if(invoices[i].Client!==null){
+                    invoices[i].client_name = invoices[i].Client.firstname+' '+invoices[i].Client.lastname;
+                    invoices[i].email = invoices[i].Client.address_email;
+                }else{
+                    invoices[i].client_name = 'N/A';
+                    invoices[i].email = 'N/A';
+                }
+                delete invoices[i].Client;
+                delete invoices[i].invoice_debitorserial;
+            }
+            // const invoiceOrder = { serial:null,invoice_number:null, invoice_for:null, invoice_category:null, client_name:null,email:null, invoice_duedate:null, invoice_paydate:null, invoice_description:null, invoice_ratetype:null, invoice_date:null, invoice_status:null, tax:null, total:null };
+            // for(let i=0;i<invoices.length;i++){
+            //     invoices[i] = Object.assign(invoiceOrder, invoices[i]);
+            // }
+            const invoiceOrder = ['serial','invoice_number','invoice_for','invoice_category','client_name','email','invoice_duedate','invoice_paydate','invoice_description','invoice_ratetype','invoice_date','invoice_status','tax','total'];
+            for(let i=0;i<invoices.length;i++){
+                invoices[i] = preferredOrder(invoices[i],invoiceOrder);
+            }
+            
+            function preferredOrder(obj, order) {
+                var newObject = {};
+                for(var i = 0; i < order.length; i++) {
+                    if(obj.hasOwnProperty(order[i])) {
+                        newObject[order[i]] = obj[order[i]];
+                    }
+                }
+                return newObject;
+            }
             const table = interactiveTable({data: invoices,interaction: debitInvoiceInteraction});
             
             const neoHeader = header();

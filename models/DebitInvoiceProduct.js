@@ -15,11 +15,11 @@ const DebitInvoiceProduct = db.define('DebitInvoiceProduct',{
         type: sequelize.STRING(200),
         allowNull: false
     },
-    taxRate: {
+    tax_rate: {
         type: sequelize.DECIMAL(10,2),
         allowNull: false
     },
-    totalPrice: {
+    price: {
         type: sequelize.DECIMAL(10,2),
         allowNull: false
     },

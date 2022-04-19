@@ -1,7 +1,8 @@
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const login = async (req, res) => {
-    const { username, password } = req.body;
+    console.log('login page');
+    const { username, password } = req.fields;
     
     const user = await User.findOne({
         where: {

@@ -13,8 +13,7 @@ const DebitInvoice = db.define('DebitInvoice',{
         allowNull: true
     },
     invoice_number: {
-        type: sequelize.STRING(30),
-        primaryKey: true,
+        type: sequelize.INTEGER(20),
         allowNull: true
     },
     invoice_category: {
@@ -41,10 +40,10 @@ const DebitInvoice = db.define('DebitInvoice',{
         type: sequelize.STRING(20),
         allowNull: true
     },
-    total_item: {
-        type: sequelize.INTEGER(11),
-        allowNull: false
-    },
+    // total_item: {
+    //     type: sequelize.INTEGER(11),
+    //     allowNull: false
+    // },
     invoice_date: {
         type: sequelize.STRING(20),
         allowNull: true

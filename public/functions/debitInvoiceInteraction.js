@@ -67,12 +67,26 @@ const debitInvoiceInteraction = {
                 }
             }
         },
+        markAsNew:{
+            title: 'Mark as New',
+            confirmationRequired: true,
+            confirmationMessage: 'Are you sure you want to mark this invoice as New?',
+            action: async (tr)=>{
+                const response = await fetch(`/api/debitInvoice/markAsNew/${tr.getAttribute('data-serial')}`,{method:'PUT'});
+                if(response.status!==200){
+                    notify({data:'Error marking invoice as New',type:'danger'});
+                }else{
+                    notify({data:'Invoice marked as New',type:'success'});
+                    await view();
+                }
+            }
+        },
         markAsSturen:{
             title: 'Mark as Sturen',
             confirmationRequired: true,
             confirmationMessage: 'Are you sure you want to mark this invoice as Sturen?',
             action: async (tr)=>{
-                const response = await fetch(`/api/debitInvoice/markAsSturen/${tr.getAttribute('data-serial')}`,{method:'POST'});
+                const response = await fetch(`/api/debitInvoice/markAsSturen/${tr.getAttribute('data-serial')}`,{method:'PUT'});
                 if(response.status!==200){
                     notify({data:'Error marking invoice as Sturen',type:'danger'});
                 }else{
@@ -86,7 +100,7 @@ const debitInvoiceInteraction = {
             confirmationRequired: true,
             confirmationMessage: 'Are you sure you want to mark this invoice as Betaald?',
             action: async (tr)=>{
-                const response = await fetch(`/api/debitInvoice/markAsBetaald/${tr.getAttribute('data-serial')}`,{method:'POST'});
+                const response = await fetch(`/api/debitInvoice/markAsBetaald/${tr.getAttribute('data-serial')}`,{method:'PUT'});
                 if(response.status!==200){
                     notify({data:'Error marking invoice as Betaald',type:'danger'});
                 }else{
@@ -108,7 +122,7 @@ const debitInvoiceInteraction = {
             title: 'View PDF',
             confirmationRequired: false,
             action: async (tr)=>{  
-                window.open(`/debitInvoice/viewPDF/${tr.getAttribute('data-serial')}`);
+                window.open(`/api/viewPDF/debit/${tr.getAttribute('data-serial')}`);
             }  
         },
 
