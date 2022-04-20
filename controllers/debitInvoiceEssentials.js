@@ -1,5 +1,5 @@
-const DebitInvoice = require('../models/debitInvoice');
-const Client = require('../models/client');
+const DebitInvoice = require('../models/DebitInvoice');
+const Client = require('../models/Client');
 const Sequelize = require('sequelize');
 const debitInvoiceEssentials = async (req,res)=>{
     const categories = await DebitInvoice.findAll({

@@ -1,5 +1,5 @@
-const DebitInvoice = require('../models/debitInvoice');
-const DebitInvoiceProduct = require('../models/debitInvoiceProduct');
+const DebitInvoice = require('../models/DebitInvoice');
+const DebitInvoiceProduct = require('../models/DebitInvoiceProduct');
 // const Sequelize = require('sequelize');
 DebitInvoice.hasMany(DebitInvoiceProduct, {foreignKey: 'invoice_serial'});
 DebitInvoiceProduct.belongsTo(DebitInvoice,{foreignKey: 'serial'});
