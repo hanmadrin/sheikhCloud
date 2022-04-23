@@ -27,6 +27,7 @@ const interactiveTable = ({data,interaction})=>{
 
             tr.oncontextmenu = (context)=>{
                 context.preventDefault();
+                document.body.classList.add('overflow-hidden');
                 tr.style.backgroundColor = '#39c0ed';
                 const backDrop = document.createElement('div');
                 const contextMenu = document.createElement('div');
@@ -83,6 +84,7 @@ const interactiveTable = ({data,interaction})=>{
                 backDrop.className = style.neoTable.backDrop.join(' ');
                 const contextCancel = (cancel)=>{
                     cancel.preventDefault();
+                    document.body.classList.remove('overflow-hidden');
                     tr.removeAttribute('style');
                     backDrop.remove();
                     contextMenu.remove();

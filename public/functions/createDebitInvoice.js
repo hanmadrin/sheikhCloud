@@ -1,7 +1,7 @@
 import style from "../styles/style.js";
 import app from "../views/app.js";
 import header from "../views/header.js";
-import view from "../views/view.js";
+// import view from "../views/view.js";
 import notify from "./notify.js";
 
 const createDebitInvoice = async ({invoice,option,serial})=>{
@@ -336,6 +336,7 @@ const createDebitInvoice = async ({invoice,option,serial})=>{
             product.price = priceInput.value;
             priceInput.onchange= ()=>{
                 //changing_data
+                priceInput.value = parseFloat(priceInput.value).toFixed(2);
                 invoice.DebitInvoiceProducts = getDebitInvoiceProducts();
             }; 
             if(option=='view'){priceInput.setAttribute('disabled',true);}
@@ -393,7 +394,7 @@ const createDebitInvoice = async ({invoice,option,serial})=>{
             fileUploadInput.className = style.neoDynamicContent.fileUploadInput.join(' ');
             fileUploadInput.type = "file";
             fileUploadInput.name = "file_upload";
-            fileUploadInput.setAttribute('accept','image/jpeg,image/gif,image/png,application/pdf');
+            fileUploadInput.setAttribute('accept','application/pdf');
             fileUploadInput.onchange= ()=>{
                 //changing_data
                 invoice.DebitInvoiceProducts = getDebitInvoiceProducts();

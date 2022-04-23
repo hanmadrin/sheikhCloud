@@ -9,6 +9,7 @@
 @media (min-width: 1400px) {  }
 
 .border-rounded{border-radius:50%}
+.border-roundedIMP{border-radius:50% !important}
 .border-0px{border-width:0px;}
 .border-top-0px{border-top-width:0px;}
 .border-start-0px{border-left-width:0px;}
@@ -298,12 +299,15 @@
 .box-shadow-3d{box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;}
 .focus-boxshadow-none:focus{box-shadow:none}
 .cursor-pointer{cursor:pointer}
+.fs-30px{font-size:30px;}
+.fs-25pxIMP{font-size:25px !important;}
 .fs-30pxIMP{font-size:30px !important;}
 .fs-40pxIMP{font-size:40px !important;}
 .lh-1IMP{line-height:1 !important;}
 
 .transition-height-1s{transition:all 1s;}
-
+.zindex-fixedIMP{z-index:1030 !important;}
+.zindex-offcanvasIMP{z-index:1050 !important;}
 /* box-shadow end */
 .text-break-all{word-break:break-all}
 .max-width-150px{max-width:150px;}

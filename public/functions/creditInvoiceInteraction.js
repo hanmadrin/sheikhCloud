@@ -44,7 +44,7 @@ const creditInvoiceInteraction = {
             confirmationRequired: true,
             confirmationMessage: 'Are you sure you want to mark this invoice as betaald?',
             action: async (tr)=>{
-                const response = await fetch(`/api/creditInvoice/markAsBetaald/${tr.getAttribute('data-serial')}`,{method:'POST'});
+                const response = await fetch(`/api/creditInvoice/markAsBetaald/${tr.getAttribute('data-serial')}`,{method:'PUT'});
                 if(response.status!==200){
                     notify({data:'Error marking invoice as betaald',type:'danger'});
                 }else{
@@ -58,7 +58,7 @@ const creditInvoiceInteraction = {
             confirmationRequired: true,
             confirmationMessage: 'Are you sure you want to mark this invoice as on betaald?',
             action: async (tr)=>{
-                const response = await fetch(`/api/creditInvoice/markAsOnBetaald/${tr.getAttribute('data-serial')}`,{method:'POST'});
+                const response = await fetch(`/api/creditInvoice/markAsOnBetaald/${tr.getAttribute('data-serial')}`,{method:'PUT'});
                 if(response.status!==200){
                     notify({data:'Error marking invoice as on betaald',type:'danger'});
                 }else{
@@ -77,7 +77,14 @@ const creditInvoiceInteraction = {
                 await view();
             }
         },
-        
+        viewPDF: {
+            title: 'View PDF',
+            iconUrl: 'viewIcon.png',
+            confirmationRequired: false,
+            action: async (tr)=>{
+                window.open(`/api/viewPDF/credit/${tr.getAttribute('data-serial')}`);
+            }
+        },      
     }
 };
 export default creditInvoiceInteraction;

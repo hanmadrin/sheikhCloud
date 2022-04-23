@@ -23,6 +23,7 @@ const actionConfirmer = ({action, message,nodes }) => {
     confirm.onclick = async () => {
         await action.action(tr);
         tr.removeAttribute('style');
+        document.body.classList.remove('overflow-hidden');
         neoActionConfirmer.remove();
     }
     actionHolder.appendChild(cancel);
@@ -36,6 +37,7 @@ const actionConfirmer = ({action, message,nodes }) => {
     const actionCancel = function(cancel){
         if(cancel.target===this){
             tr.removeAttribute('style');
+            document.body.classList.remove('overflow-hidden');
             neoActionConfirmer.remove();
         }
     }

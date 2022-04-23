@@ -31,6 +31,7 @@ const creditInvoice = async () => {
                 quarter: {values: ['1','2','3','4'],allowNull: false},
                 company: {values: data.distinctValues.company.map(a=>a.company),allowNull: true},
                 status: {values: data.distinctValues.status.map(a=>a.status),allowNull: true},
+                creditor: {values: data.distinctValues.creditor.map(a=>{if(a.creditor!='')console.log(a.creditor);return a.creditor}),allowNull: true},
             };
             const filterHolder = document.createElement("div");
             filterHolder.className = style.creditInvoice.filterHolder.join(' ');

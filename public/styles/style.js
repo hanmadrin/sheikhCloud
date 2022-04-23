@@ -1,4 +1,8 @@
 const style = {
+    home:{
+        main: ['text-center','mt-5','pt-5'],
+        logo: ['w-500px']
+    },
     neoLoader:{
         main: ['position-fixed','vw-100','vh-100','top-0','start-0','zindex-fixed','d-none'],
         loaderHolder:['position-absolute','top-50','start-50','translate-middle'],
@@ -21,8 +25,17 @@ const style = {
     },
     neoHeader:{
         main: ['d-flex','justify-content-between','h-50px','p-2','bg-info'],
-        button: ['btn'],
-        logo: ['my-n2']
+        button: ['btn','mx-4'],
+        logo: ['my-n2','cursor-pointer','mx-3','shadow','px-3','border','border-dark','border-radius-5px'],
+        navMenu: ['d-flex','justify-content-end','align-items-center'],
+    },
+    neoDropDown:{
+        main: ['dropdown'],
+        showButton: ['btn','dropdown-toggle'],
+        showButtonCircle: ['btn','dropdown','border-roundedIMP','bg-success','text-white','p-0','h-35px','w-35px','fs-25pxIMP'],
+        menuHolder : ['dropdown-menu','zindex-offcanvasIMP','bg-info','overflow-hidden'],
+        menuItem: [],
+        menuItemButton:['btn','w-100']
     },
     neoFilter:{
         main: ['p-1','border','border-radius-10px','w-max-content','position-relative'],
@@ -34,7 +47,7 @@ const style = {
         main: ['d-table','w-100'],
         noData: ['text-center','p-5','bg-info-2'],
         backDrop: ['position-fixed','top-0','left-0','vw-100','vh-100','zindex-modal-backdrop','bg-transparent'],
-        contextMenu:['position-absolute','zindex-offcanvas','bg-white','min-width-200px','border-radius-10px','p-1','border','shadow'],
+        contextMenu:['position-fixed','zindex-offcanvas','bg-white','min-width-200px','border-radius-10px','p-1','border','shadow'],
         contextMenuDefaultsItemHolder:['d-flex'],
         contextMenuItem:['cursor-pointer','bg-hover-dark','p-2','border'],
         contextMenuDefaultItem:['cursor-pointer','bg-hover-dark','p-2','w-100','text-center','border'],
@@ -62,6 +75,23 @@ const style = {
         main: ['d-flex','justify-content-center','mb-5'],
         contentHolder:['border','p-2','my-3'],
         h3: ['text-center','mb-4']
+    },
+    neoDebitInvoiceBuilder:{
+        main: ['d-flex','justify-content-center','mb-5'],
+        contentHolder:['border','p-2','my-3'],
+        h3: ['text-center','mb-4'],
+    },
+    neoCreditInvoiceBuilder:{
+        main: ['d-flex','justify-content-center','mb-5'],
+        contentHolder:['border','p-2','my-3','w-500px'],
+        h3: ['text-center','mb-4'],
+        inputsHolder:['d-flex','justify-content-between','align-items-center'],
+        inputHolder: ['my-2','w-100'],
+        label:[],
+        input:['form-control','p-6px'],
+        selector:['form-select'],
+        saveButtonHolder: ['d-flex','justify-content-center'],
+        saveButton:['btn','btn-success','my-3','btn-lg'],
     },
     neoRadioInput:{
         main:['d-flex','justify-content-between'],

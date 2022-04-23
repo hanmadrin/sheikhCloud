@@ -14,6 +14,7 @@ const actionClickHandler = async ({action, nodes}) => {
         tr.removeAttribute('style');
         backDrop.remove();
         contextMenu.remove();
+        document.body.classList.remove('overflow-hidden');
     }
     
     

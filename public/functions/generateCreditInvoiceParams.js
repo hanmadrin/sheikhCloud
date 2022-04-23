@@ -3,7 +3,8 @@ const generateCreditInvoiceParams = () => {
         {dbColumn:'invoice_date',name:'year',default: `${new Date().getFullYear()}`},
         {dbColumn:'invoice_date_quarter',name:'quarter',default: `${new Date().getMonth()<3?1:new Date().getMonth()<6?2:new Date().getMonth()<9?3:4}`},
         {dbColumn:'invoice_for',name:'company',default: ''},
-        {dbColumn:'invoice_status',name:'status',default: ''}
+        {dbColumn:'invoice_status',name:'status',default: ''},
+        {dbColumn:'invoice_creditor',name:'creditor',default: ''}
     ];
     const searchParams = new URLSearchParams(window.location.search);
     searchParams.forEach((value,key)=>{
