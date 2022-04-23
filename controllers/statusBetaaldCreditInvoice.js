@@ -1,4 +1,4 @@
-const CreditInvoice = require('../models/creditInvoice');
+const CreditInvoice = require('../models/CreditInvoice');
 const statusBetaaldCreditInvoice = async (req, res) => {
     const value = 'betaald';
     const serial = req.params.serial;

@@ -1,4 +1,4 @@
-const CreditInvoice = require('../models/creditInvoice');
+const CreditInvoice = require('../models/CreditInvoice');
 const deleteCreditInvoice = async (req, res) => {
     const serial = req.params.serial;
     const invoice = await CreditInvoice.findOne({
