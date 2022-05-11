@@ -1,6 +1,9 @@
 import actionClickHandler from "../functions/actionClickHandler.js";
 import style from "../styles/style.js";
+import { taxCalculationFromInvoice } from "../functions/taxCalculation.js";
+
 const interactiveTable = ({data,interaction})=>{
+    
     const neoTable = document.createElement('div');
     neoTable.className = style.neoTable.main.join(' ');
     if(data.length===0){
@@ -106,6 +109,7 @@ const interactiveTable = ({data,interaction})=>{
             });
             neoTable.appendChild(tr);
         });
+
     }
     return neoTable;
 };

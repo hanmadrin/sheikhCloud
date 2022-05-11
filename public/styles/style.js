@@ -54,7 +54,8 @@ const style = {
         thead: ['sticky-top','shadow','d-table-row','bg-info-3'],
         th: ['text-capitalize','d-table-cell','p-3','ps-2','border','border-start-0','border-bottom-0','border-info'],
         tr: ['d-table-row','bg-info-2','border','border-top-0','border-info','border-bottom-0','border-end-0','bg-hover-dark','cursor-pointer'],
-        td: ['d-table-cell','p-2','pt-3','pb-3','border','border-start-0','border-top-0','border-info','text-truncate','text-nowrap','text-break-all','max-width-150px']
+        td: ['d-table-cell','p-2','pt-3','pb-3','border','border-start-0','border-top-0','border-info','text-truncate','text-nowrap','text-break-all','max-width-150px'],
+        
     },
     neoActionConfirmer:{
         main: ['position-fixed','vh-100','vw-100','top-0','left-0','zindex-modal-backdrop'],
@@ -65,11 +66,23 @@ const style = {
         messageHolder: ['text-center','py-5'],
         actionHolder: ['d-flex','justify-content-between','align-items-center']
     },
+    neoSummary: {
+        main: ['my-5','h-300px','d-flex','flex-column','justify-content-center','align-items-center','border','bg-info'],
+        content: ['d-flex','justify-content-center'],
+    },
     debitInvoice:{
-        filterHolder:['shadow','d-flex','justify-content-evenly','p-2']
+        filterHolder:['shadow','d-flex','justify-content-evenly','p-2'],
     },
     creditInvoice:{
-        filterHolder:['shadow','d-flex','justify-content-evenly','p-2']
+        filterHolder:['shadow','d-flex','justify-content-evenly','p-2'],
+    },
+    neoPrognose:{
+        filterHolder:['shadow','d-flex','justify-content-evenly','p-2'],
+        main:['border','m-5','p-5','w-600px'],
+        header: ['d-block'],
+        contentHolder: ['w-500px'],
+        priceHolder: ['d-flex','justify-content-between','align-items-center','w-300px'],
+        prognoseHolder: ['d-flex','justify-content-center']
     },
     neoDebitInvoiceBuilder:{
         main: ['d-flex','justify-content-center','mb-5'],
@@ -126,7 +139,7 @@ const style = {
         removeButton:['btn','btn-danger','border-radius-10px','p-2','cursor-pointer','position-absolute','top-0','end-0'],
         fileUploadInput:['form-control'],
         saveButton:['btn','btn-success','my-3','btn-lg'],
-    }
+    },
 
 };
 export default style;

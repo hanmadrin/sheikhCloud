@@ -8,6 +8,8 @@ import generateCreditInvoiceParams from "../functions/generateCreditInvoiceParam
 import filter from "./filter.js";
 import interactiveTable from "./interactiveTable.js";
 import creditInvoiceInteraction from "../functions/creditInvoiceInteraction.js";
+import invoice_summary from "./invoice_summary.js";
+
 const creditInvoice = async () => {
     try{
         const response = await fetch('/api/isLoggedIn', {method: 'GET',});
@@ -31,7 +33,7 @@ const creditInvoice = async () => {
                 quarter: {values: ['1','2','3','4'],allowNull: false},
                 company: {values: data.distinctValues.company.map(a=>a.company),allowNull: true},
                 status: {values: data.distinctValues.status.map(a=>a.status),allowNull: true},
-                creditor: {values: data.distinctValues.creditor.map(a=>{if(a.creditor!='')console.log(a.creditor);return a.creditor}),allowNull: true},
+                creditor: {values: data.distinctValues.creditor.map(a=>{if(a.creditor!='')return a.creditor}),allowNull: true},
             };
             const filterHolder = document.createElement("div");
             filterHolder.className = style.creditInvoice.filterHolder.join(' ');
@@ -49,13 +51,19 @@ const creditInvoice = async () => {
             });
             
             const contentHolder = document.createElement("div");
-            const table = interactiveTable({data: data.invoices,interaction: creditInvoiceInteraction});
-
+            const invoices = data.invoices;
+            const table = interactiveTable({data: invoices,interaction: creditInvoiceInteraction});
+            const neoSummary = invoice_summary({invoices});
             const neoHeader = header();
+
+            
+            
+
+
             const root = document.getElementById(app.id);
-            root.replaceChildren(neoHeader,filterHolder,table);
+            root.replaceChildren(neoHeader,filterHolder,table,neoSummary);
         }
-    }catch{};
+    }catch(error){ console.log(error)};
     
     
 }

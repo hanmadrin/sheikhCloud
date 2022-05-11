@@ -1,5 +1,6 @@
 const CreditInvoice = require('../models/CreditInvoice');
 const Sequelize = require('sequelize');
+
 const creditInvoice = async (req,res) => {
     const year = await CreditInvoice.findAll({
         attributes: [

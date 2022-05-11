@@ -11,7 +11,7 @@ const viewPDF = async (req, res) => {
         res.setHeader('Content-Disposition', 'inline; filename=invoice.pdf');
         file.pipe(res);
     }else{
-        console.log('not exists');
+        console.log('do not exists');
         res.redirect('/notFound');
     }
 };

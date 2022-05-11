@@ -22,6 +22,7 @@ const saveCreditInvoice = require('../controllers/saveCreditInvoice');
 const deleteCreditInvoice = require('../controllers/deleteCreditInvoice');
 const statusBetaaldCreditInvoice = require('../controllers/statusBetaaldCreditInvoice');
 const statusOnBetaaldCreditInvoice = require('../controllers/statusOnBetaaldCreditInvoice');
+const prognose = require('../controllers/prognose');
 
 
 
@@ -29,6 +30,8 @@ router.post('/login', login);
 router.get('/isLoggedIn',isLoggedIn)
 router.use('/',authMiddleware);
 router.get('/logout',logout);
+
+router.get('/prognose',prognose);
 
 router.get('/debitInvoice',debitInvoice);
 router.post('/debitInvoice/save',saveDebitInvoice);

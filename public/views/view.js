@@ -8,6 +8,7 @@ import creditInvoice from "./creditInvoice.js";
 import app from "./app.js";
 import buildDebitInvoice from "./buildDebitInvoice.js";
 import buildCreditInvoice from "./buildCreditInvoice.js";
+import prognose from "./prognose.js";
 const view = async ()=>{
     const path = window.location.pathname;
     toggleLoader(true);
@@ -15,6 +16,8 @@ const view = async ()=>{
         await home();
     }else if(path==='/login' || path==='/login/'){
         await logIn();
+    }else if(path==='/prognose' || path==='/prognose/'){
+        await prognose();
     }else if(path==='/debitInvoice' || path==='/debitInvoice/'){
         await debitInvoice();
     }else if(path==='/creditInvoice' || path==='/creditInvoice/'){

@@ -8,6 +8,7 @@ import generateDebitInvoiceParams from "../functions/generateDebitInvoiceParams.
 import filter from "./filter.js";
 import interactiveTable from "./interactiveTable.js";
 import debitInvoiceInteraction from "../functions/debitInvoiceInteraction.js";
+import invoice_summary from "./invoice_summary.js";
 const debitInvoice = async () => {
     try{
         const response = await fetch('/api/isLoggedIn', {method: 'GET',});
@@ -26,6 +27,7 @@ const debitInvoice = async () => {
             notify({data:'Error fetching invoice',type:'danger'});
         }else{
             const data = await response.json();
+            const neoSummary = invoice_summary({invoices:data.invoices});
             const filterValues = {
                 year: {values:data.distinctValues.year.map(a=>a.year.toString()),allowNull: false},
                 quarter: {values: ['1','2','3','4'],allowNull: false},
@@ -51,12 +53,13 @@ const debitInvoice = async () => {
             
             const contentHolder = document.createElement("div");
             const invoices = data.invoices;
+            
             for(let i=0;i<invoices.length;i++){
+                
                 const items = invoices[i].DebitInvoiceProducts;
                 invoices[i].tax = 0;
                 invoices[i].total = 0;
                 for(let j=0;j<items.length;j++){
-                    //  parseFloat(items[j].price);
                     const tax_rate = parseFloat(items[j].tax_rate);
                     if(invoices[i].invoice_ratetype === 'exc'){
                         invoices[i].total += (parseFloat(items[j].price)*(1+tax_rate/100)); 
@@ -103,7 +106,8 @@ const debitInvoice = async () => {
             
             const neoHeader = header();
             const root = document.getElementById(app.id);
-            root.replaceChildren(neoHeader,filterHolder,table);
+            
+            root.replaceChildren(neoHeader,filterHolder,table,neoSummary);
         }
     }catch(err){console.log(err)};
     
